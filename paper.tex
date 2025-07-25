@@ -240,7 +240,7 @@
   Its flat memory layout and high-speed fabric interconnect pose a distinct optimization challenge compared to conventional communication and hierarchical memory bottlenecks.
   While mesh-based simulation techniques are efficient, they struggle to capture dynamic phenomena such as turbulent, free-surface and multiphase flows.
   This is where particle methods offer superior physical realism, but at an inherently steep cost of tracking individual particles and interactions with their neighbors as they flow freely through space.
-  The tension between the target application of dynamic, unstructured particle flows and the target architecture of the rigid, structured mesh of the WSE yields a unique architectural mapping problem.
+  The tension between the target application of dynamic, unstructured particle flows and the target architecture of the WSE's structured grid requires strategic architectural mapping.
   We leverage a spatial parallelization approach to translate physical space to the architecture of the WSE and transcend the constraints of 1:1 element-PE mappings. 
   Dynamic and flexible routing of particles across this spatial domain, combined with support for variable particle populations per PE enables us to handle rapid, turbulent and high-velocity particle movement. 
   Our technique achieves exceptional performance and efficiency, showcasing significant potential to revolutionize particle-based simulations at the wafer scale.
