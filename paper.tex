@@ -238,8 +238,8 @@
   Particle-based simulations require high compute performance and bandwidth to simulate realistic workloads at meaningful scales and resolution.
   The Cerebras Wafer-Scale Engine (WSE), a dataflow architecture comprising 900,000 processing elements, presents an alternative acceleration opportunity to CPU/GPU approaches. 
   Its flat memory layout and high-speed fabric interconnect pose a distinct optimization challenge compared to conventional communication and hierarchical memory bottlenecks.
-  Particle-based simulations pose a compelling and compute-intensive use case for the extreme scaling capabilities of the WSE. 
-  They excel in comparison with traditional, grid-based methods for the modelling of numerous complex and dynamic physical phenomena. 
+  While mesh-based simulation techniques are efficient, they struggle to capture dynamic phenomena such as turbulent, free-surface and multiphase flows.
+  This is where particle methods offer unparalleled physical realism, but at an inherently steep cost of tracking individual particles and interactions with their neighbors as they flow freely through space.
   We leverage the spatial architecture of the WSE in a novel parallelisation approach which transcends the constraints of 1:1 element-PE mappings. 
   Our approach translates physical space to the spatial architecture of the WSE. 
   Dynamic and flexible routing of particles across this spatial domain, combined with support for variable particle populations per PE enables us to handle rapid, turbulent and high-velocity particle movement. 
