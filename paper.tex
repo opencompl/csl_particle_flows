@@ -290,17 +290,93 @@
 \noindent
 Our contributions are:
 \begin{itemize}
-	\item Contribution 1 (\autoref{sec:implementation})
+	\item Contribution 1
 	\item Contribution 2
 	\item Contribution 3
 	\item Contribution 4
 \end{itemize}
 
-\section{Our New Idea}
+\section{Wafer-Scale Spatial Parallelism for Lagrangian Dynamics}
 
+\section{Background}
+\subsection{The Cerebras WSE: A Massively Parallel Dataflow Architecture}
+\subsection{Adapting HPC Workloads for Emerging Architectures}
+\begin{itemize}
+  \item limitations being reached by CPUs/GPUs
+  \item greater power efficiency afforded by novel accelerators
+  \item -> growing interest in repurposing accelerator hw for HPC applications
+  \item FP32 precision as an inherent challenge with increasing research effort being invested in solutions
+\end{itemize}
+\subsection{Particle Simulations as a Target Application Domain}
+\begin{itemize}
+  \item Key algorithmic components / defining features of Lagrangian schemes
+  \item How these apply to diverse applications of practical relevance
+\end{itemize}
 
 \section{Implementation}
-\label{sec:implementation}
+\begin{itemize}
+  \item Overview of the algorithmic components we have chosen to focus on and why (1/2 sentences) 
+\end{itemize}
+\subsection{Architectural Mapping and PE-local Co-ordinate Systems}
+\subsection{Particle Data Representation and Memory Access Patterns}
+\begin{itemize}
+  \item include force kernel computation description
+\end{itemize}
+\subsection{Batched Communication Protocol for Variable-Length Buffers}
+\begin{itemize}
+  \item how this enables scalability
+  \item how this eliminates redundant data communication
+\end{itemize}
+\subsection{Particle Migration and Dynamic Redistribution}
+\begin{itemize}
+  \item concise technical summary of the phase
+  \item Steps:
+  \begin{itemize}
+    \item local rerouting
+    \item initialization with sends
+    \item dynamic rerouting and alignment priority
+    \item support for dynamic-length sends (await receipt of any sent data)
+  \end{itemize}
+  \item Accompanying diagrams
+\end{itemize}
+\subsection{Neighbour Search and Interactions}
+\begin{itemize}
+  \item local interactions:
+  \begin{itemize}
+    \item while loops ensure no redundancy
+    \item antisymmetry of kernels
+  \end{itemize}
+  \item dynamic interactions with received neighbor data
+  \begin{itemize}
+    \item efficiency of send/receive-all approach
+    \item DSDs allow in-place updates
+    \item routing scheme and accompanying diagram
+  \end{itemize}
+\end{itemize}
+
+\section{Evaluation}
+\begin{itemize}
+  \item brief overview of what we evaluate.
+\end{itemize}
+\subsection{Experimental Setup}
+\section{Evaluation}
+\begin{itemize}
+  \item Overview of what we evaluate
+\end{itemize}
+\subsection{Experimental Setup}
+\subsection{Results}
+\begin{itemize}
+  \item Strong Scaling (perf and efficiency)
+  \item Weak Scaling
+\end{itemize}
+
+\section{Limitations and Future Work}
+\begin{itemize}
+  \item FP32 precision
+  \item Adaptive resolution and load balancing: how this will enable full usage of capacity instead of only permitting conservative measurements
+  \item Practical applications
+  \item Boundary conditions
+\end{itemize}
 
 \section{Related Work}
 
