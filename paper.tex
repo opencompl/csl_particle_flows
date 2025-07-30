@@ -292,7 +292,11 @@ Meshfree, Lagrangian simulations allow precise motion tracking through continuou
 They offer inherent advatages over grid-based methods in handling high-velocity, multi-phase or free-surface flows and complex geometries.
 By intrinsically capturing motion at the mesoscopic scale, they avoid surface approximations that can compromise the accuracy of grid-based approaches.
 
-- Computational intensity and reasons 
+The computational intensity and high bandwidth requirements of Lagrangian simulations at realistic scales present formidable challenges to conventional architectures.
+The modelling of large volumes of interacting particles over thousands of timesteps demands high throughput and efficient, irregular memory accesses.
+In high-motion environments, neighbour lists change rapidly and unpredictably. 
+This naturally exerts strain on memory bandwidth and generally requires dynamic, coordinate-based sorting of particles into bins to streamline the search process.
+
 - Architecture of Cerebras and why it's a good match
 - Our approach (summarized)
 - Contributions
