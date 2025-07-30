@@ -289,15 +289,20 @@
 \section{Introduction}
 Particle flow methods have emerged as powerful techniques for modelling dynamic phenomena spanning multiple domains with high physical accuracy.
 Meshfree, Lagrangian simulations allow precise motion tracking through continuous coordinate systems without lattice-imposed dicretization errors.
-They offer inherent advatages over grid-based methods in handling high-velocity, multi-phase or free-surface flows and complex geometries.
-By intrinsically capturing motion at the mesoscopic scale, they avoid surface approximations that can compromise the accuracy of grid-based approaches.
+They offer inherent advatages over grid-based methods in handling complex geometries and high-velocity, multi-phase or free surface flows.
+By intrinsically capturing motion at the mesoscopic scale, they avoid surface approximations that can compromise accuracy in grid-based approaches.
 
-The computational intensity and high bandwidth requirements of Lagrangian simulations at realistic scales present formidable challenges to conventional architectures.
+The computational intensity and high bandwidth requirements of Lagrangian simulations at realistic scales present formidable challenges for conventional architectures.
 The modelling of large volumes of interacting particles over thousands of timesteps demands high throughput and efficient, irregular memory accesses.
 In high-motion environments, neighbour lists change rapidly and unpredictably. 
 This naturally exerts strain on memory bandwidth and generally requires dynamic, coordinate-based sorting of particles into bins to streamline the search process.
 
-- Architecture of Cerebras and why it's a good match
+Dataflow accelerators represent a paradigm shift in computer architecture.
+The massive parallelism, high bandwidth and rapid fabric interconnect of the Cerebras WSE make it a promising candidate for acceleration of certain algorithms.
+Such algorithms must exploit the tradeoffs between these strengths and its rigid lattice architecture, absence of shared memory and data locality requirements.
+We demonstrate the compatibility of Lagrangian simulations with this inherently spatial architecture by exploting the proximity of neighbor data. 
+This expedites neighbour search and redistribution of particles, eliminating the sorting overhead of many GPU implementations.
+
 - Our approach (summarized)
 - Contributions
 
