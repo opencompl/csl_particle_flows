@@ -289,25 +289,25 @@
 \section{Introduction}
 Particle flow methods have emerged as powerful techniques for modelling dynamic phenomena spanning multiple domains with high physical accuracy.
 Meshfree, Lagrangian simulations allow precise motion tracking through continuous coordinate systems without lattice-imposed dicretization errors.
-They offer inherent advatages over grid-based methods in handling complex geometries and high-velocity, multi-phase or free surface flows.
+They offer inherent advatages over grid-based methods in handling complex geometries and high-velocity or free surface flows.
 By intrinsically capturing motion at the mesoscopic scale, they avoid surface approximations that can compromise accuracy in grid-based approaches.
 
 The computational intensity and high bandwidth requirements of Lagrangian simulations at realistic scales present formidable challenges for conventional architectures.
-The modelling of large volumes of interacting particles over thousands of timesteps demands high throughput and efficient, irregular memory accesses.
+The modelling of large volumes of interacting particles over many timesteps demands high throughput and efficient, irregular memory accesses.
 In high-motion environments, neighbour lists change rapidly and unpredictably. 
 This naturally exerts strain on memory bandwidth and generally requires dynamic, coordinate-based sorting of particles into bins to streamline the search process.
 
 Dataflow accelerators represent a paradigm shift in computer architecture.
 The massive parallelism, high bandwidth and rapid fabric interconnect of the WSE make it a promising candidate for acceleration of certain algorithms.
 Such algorithms must exploit the tradeoffs between these strengths and its rigid lattice architecture, data locality requirements and absence of shared memory.
-We demonstrate the compatibility of Lagrangian simulations with this inherently spatial architecture by exploiting the proximity of neighbor data. 
-This expedites neighbor search and particle redistribution, eliminating the sorting overhead of GPU implementations.
+We demonstrate the compatibility of Lagrangian simulations with this inherently spatial architecture by exploiting the proximity of neighbor data.
+This expedites neighbor search, eliminating the sorting overhead of GPU implementations.
 
-We present a dynamic and flexible Lagrangian system for the WSE, capable of efficiently performing neighborhood search, particle interactions and dynamic redistribution of particles across the spatial domain. 
-We introduce a flexible communication scheme which supports arbitrary, runtime-determined routes for variable numbers of particles. 
-By overcoming the constraints of fixed element-PE mappings of previous WSE implementations, we introduce a dynamic and scalable alternative. 
-This work lays the foundation for efficient deployment of practical Lagrangian applications at the wafer scale. 
-We anticipate this will broaden the scope of algorithms that can be supported on the WSE, particularly those driven by dynamic, spatially driven interactions - ranging from fluid dynamics to molecular dynamics, crowd modelling, swarm behaviour and boid simulations. 
+We present a dynamic and flexible Lagrangian system for the WSE, capable of efficient neighborhood search, interactions and dynamic spatial redistribution of particles. 
+We introduce a flexible communication scheme which supports runtime-determined routes for variable numbers of particles. 
+By overcoming the constraints of fixed element-to-PE mappings of prior works, we introduce a dynamic alternative. 
+This work lays the foundation for deployment of practical Lagrangian applications at the wafer scale. 
+We anticipate this will broaden the scope of algorithms that can be supported on the WSE, particularly simulations of dynamic, spatially-driven interactions - from fluid dynamics to molecular dynamics, crowd modelling, swarm behaviour and boid simulations. 
 
 Our contributions include:
 \begin{itemize}
