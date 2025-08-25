@@ -309,15 +309,14 @@ By overcoming the constraints of fixed element-PE mappings of previous WSE imple
 This work lays the foundation for efficient deployment of practical Lagrangian applications at the wafer scale. 
 We anticipate this will broaden the scope of algorithms that can be supported on the WSE, particularly those driven by dynamic, spatially driven interactions - ranging from fluid dynamics to molecular dynamics, crowd modelling, swarm behaviour and boid simulations. 
 
-- Contributions
-
-\noindent
-Our contributions are:
+Our contributions include:
 \begin{itemize}
-	\item Contribution 1
-	\item Contribution 2
-	\item Contribution 3
-	\item Contribution 4
+  \item A scalable Lagrangian simulation framework on the WSE, presenting particle dynamics with soft sphere repulsive interactions as a representative use case.
+	\item Spatial mapping of a global coordinate domain onto the WSE, with PE-local coordinate subdomains, allowing modelling of continuous particle flows.
+	\item Many-to-one particle-to-PE mappings, enabling processing of multiple particles per PE.
+	\item A dynamic and flexible routing scheme, enabling communication of variable-length particle data between dynamically-determined source and destination PEs.
+	\item An efficient neighborhood search implementation which leverages the spatial proximity of nearby particles to identify all neighbors within a cutoff radius.
+  \item Analysis of performance, efficiency and scalability, achieving superior results to state-of-the-art GPU approaches and simulating more particles than previous works.
 \end{itemize}
 
 \section{Wafer-Scale Spatial Parallelism for Lagrangian Dynamics}
