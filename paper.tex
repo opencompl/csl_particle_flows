@@ -58,6 +58,10 @@
 \usepackage{hyphenat}
 \usepackage[shortcuts]{extdash}
 
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{caption}
+
 \input{tex/setup.tex}
 \input{tex/acm.tex}
 
@@ -320,6 +324,50 @@ Our contributions include:
 \end{itemize}
 
 \section{Wafer-Scale Spatial Parallelism for Lagrangian Dynamics}
+\begin{figure}[htbp]
+    \centering
+    % Row 1
+    \begin{subfigure}{0.25\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Displacement_a2.jpg}
+        \caption*{(a)}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.25\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Displacement_b2.jpg}
+        \caption*{(b)}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.25\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Displacement_c2.jpg}
+        \caption*{(c)}
+    \end{subfigure}
+
+    \vspace{0.5em} % vertical space between rows
+
+    % Row 2
+    \begin{subfigure}{0.25\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Displacement_d2.jpg}
+        \caption*{(d)}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.25\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Displacement_e2.jpg}
+        \caption*{(e)}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.25\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Displacement_f2.jpg}
+        \caption*{(f)}
+    \end{subfigure}
+
+    \caption{Dynamic particle distribution protocol}
+\end{figure}
 
 \section{Background}
 \subsection{The Cerebras WSE: A Massively Parallel Dataflow Architecture}
